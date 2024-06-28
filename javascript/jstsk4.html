@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date and Time</title>
+<script>
+function showDate() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  var date = mm + '/' + dd + '/' + yyyy;
+  document.getElementById("date").innerHTML = date;
+}
+
+function showTime() {
+  var today = new Date();
+  var hours = today.getHours();
+  var minutes = today.getMinutes();
+  var seconds = today.getSeconds();
+  var time = hours + ":" + minutes + ":" + seconds;
+  document.getElementById("time").innerHTML = time;
+}
+</script>
+</head>
+<body>
+
+<button onclick="showDate()">Show Date</button><br>
+<button onclick="showTime()">Show Time</button><br><br>
+
+<div id="date"></div><br>
+<div id="time"></div>
+
+</body>
+</html>

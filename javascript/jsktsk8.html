@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, pink, yellow);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .register-btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <input type="text" placeholder="First Name" required>
+            <span class="status">POOR</span>
+
+            <input type="text" placeholder="Last Name" required>
+            <span class="status">POOR</span>
+
+            <input type="email" placeholder="Email" required>
+            <span class="status">POOR</span>
+
+            <input type="password" placeholder="Password" required>
+            <span class="status">POOR</span>
+
+            <input type="password" placeholder="Re-enter Password" required>
+            <span class="status">POOR OR MISMATCH</span>
+
+            <select>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <input type="tel" placeholder="Phone Number" required>
+            <span class="status">POOR</span>
+
+            <input type="number" placeholder="Age" required>
+
+            <select>
+                <option value="" disabled selected>Select State</option>
+                <option value="state1">State 1</option>
+                <option value="state2">State 2</option>
+            </select>
+
+            <textarea placeholder="Address"></textarea>
+
+            <label>Languages known:</label>
+            <input type="checkbox" id="english" name="language" value="english">
+            <label for="english">English</label>
+            <input type="checkbox" id="kannada" name="language" value="kannada">
+            <label for="kannada">Kannada</label>
+            <input type="checkbox" id="hindi" name="language" value="hindi">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="telugu" name="language" value="telugu">
+            <label for="telugu">Telugu</label>
+
+            <label>
+                <input type="checkbox" required>
+                I hereby declare all the given details are true
+            </label>
+
+            <button class="register-btn" type="submit">Register</button>
+        </form> 
+    </div>
+
+    <script>
+        // JavaScript validation (add this script at the end of the body)
+document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    const password = document.querySelector('input[type="password"]').value;
+    const reenterPassword = document.querySelector('input[type="password"]:nth-child(5)').value;
+
+    if (password !== reenterPassword) {
+        e.preventDefault();
+        alert("Passwords do not match!");
+    }
+});
+
+    </script>
+</body>
+</html>

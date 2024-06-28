@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortLetters(str) {
+  str = str.toLowerCase();
+  const charArray = str.split("");
+  charArray.sort();
+  return charArray.join("");
+}
+const originalString = "webmaster";
+const sortedString = sortLetters(originalString);
+console.log(sortedString);
+    </script>
+</body>
+</html>
